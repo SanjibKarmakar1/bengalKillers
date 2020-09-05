@@ -1,0 +1,226 @@
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('assets/img/contact-bg.jpg')">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+               <h1>Join BK Today</h1>
+               <hr class="small">
+               <span class="subheading">Keep in mind that the BK is War Clan. This means
+               that you will be expected to participate in war daily. If you are unable to do so please do
+               not submit an application. Thank you!</span>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+<!-- Main Content -->
+<div class="container">
+   <h3 class="noticeReq">Please make sure that you meet the <span class="minReq" data-toggle="modal" data-target="#myModal">minimum requirements</span> before applying.</h3>
+   <!-- http://formspree.io/bengalkillers2015@gmail.com -->
+   <form class="well form-horizontal" method="POST" action="" id="contact_form" #f="ngForm">
+      <fieldset>
+         <legend>Contact Us Today!</legend>
+         <div class="form-group">
+            <label class="col-md-4 control-label">In-game Name</label>  
+            <div class="col-md-4 inputGroupContainer">
+               <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-sunglasses"></i></span>
+                  <input  name="first_name" placeholder="IGN" class="form-control"  type="text" ngModel>
+               </div>
+            </div>
+         </div>
+         <div class="form-group">
+            <label class="col-md-4 control-label" >Full Name</label> 
+            <div class="col-md-4 inputGroupContainer">
+               <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                  <input name="full_name" placeholder="Full Name" class="form-control"  type="text" ngModel>
+               </div>
+            </div>
+         </div>
+         <div class="form-group required">
+            <label class="col-md-4 control-label" >Player Tag #</label> 
+            <div class="col-md-4 inputGroupContainer">
+               <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-tags"></i></span>
+                  <input name="player_tag" data-minlength="9" placeholder="Your tag # - located on your profile." class="form-control" data-error="Minimum of 9 characters" type="text" required ngModel>
+               </div>
+               <div class="help-block with-errors"></div>
+            </div>
+         </div>
+         <div class="form-group">
+            <label class="col-md-4 control-label" >Reference's Name</label> 
+            <div class="col-md-4 inputGroupContainer">
+               <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                  <input name="reference" placeholder="The person who referred you" class="form-control"  type="text" ngModel>
+               </div>
+            </div>
+         </div>
+         <div class="form-group required">
+            <label class="col-md-4 control-label" >Total War Stars</label> 
+            <div class="col-md-4 inputGroupContainer">
+               <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-star"></i></span>
+                  <input name="war_star" placeholder="War Stars" class="form-control"  type="number" required ngModel>
+               </div>
+            </div>
+         </div>
+         <div class="form-group required">
+            <label class="col-md-4 control-label">E-Mail</label>  
+            <div class="col-md-4 inputGroupContainer">
+               <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                  <input name="email" placeholder="E-Mail Address" class="form-control"  type="email" data-error="Yo, that email address is invalid" required ngModel>
+               </div>
+               <div class="help-block with-errors"></div>
+            </div>
+         </div>
+         <div class="form-group">
+            <label class="col-md-4 control-label">Town Hall Level</label>
+            <div class="col-md-4 selectContainer">
+               <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                  <select name="townhall" class="form-control selectpicker" ngModel>
+                     <option *ngFor = "let th of townHalls">{{ th }}</option>
+                  </select>
+               </div>
+            </div>
+         </div>
+         <div class="form-group">
+            <label class="col-md-4 control-label">Why do you want to join BK? </label>
+            <div class="col-md-4 inputGroupContainer">
+               <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                  <textarea class="form-control" name="why_bk" placeholder="" ngModel></textarea>
+               </div>
+            </div>
+         </div>
+         <div class="form-group required">
+            <label class="col-md-4 control-label">Describe your Attack Strategies within war </label>
+            <div class="col-md-4 inputGroupContainer">
+               <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-knight"></i></span>
+                  <textarea class="form-control" name="attack_strategies" placeholder="Attack Strategies / Your fav attack" data-error="Please supply an Attack Strategy name atleast" required ngModel></textarea>
+               </div>
+            </div>
+            <div class="help-block with-errors"></div>
+         </div>
+         <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-4">
+               <button type="button" (click)="submitForm(f)" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>  <!-- onclick="submitForm();    (click)="submitForm($event)"" -->
+            </div>
+         </div>
+
+         <!-- Success message -->
+        <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will invite you to BK if acceptance criteria are fulfilled.</div>
+
+
+
+      </fieldset>
+   </form>
+</div>
+<!-- /.container -->
+<!-- <hr> -->
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Clan Requirements</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4>Town Hall 1-5</h4>
+        <p class="paragraphReq">Currently not accepting</p>
+        <h4>Town Hall 6</h4>
+        <div class="paragraphReq" style="text-align:left;">
+          *&nbsp;145 Army Camp Space
+        <br>
+          *&nbsp;Clan Castle capacity 20
+        <br>
+          *&nbsp;Max Loons (lvl 3), Healer (lvl 1)
+        <br>
+          * Walls lvl 4+ 
+        <br>
+        <br>
+        </div>
+        <h4>Town Hall 7</h4>
+        <div class="paragraphReq" style="text-align:left;">
+          *&nbsp;200 Army Camp Space
+        <br>
+          *&nbsp;King level 2+
+        <br>
+          * Level 2 Spell Factory, Dark Barracks level 2
+        <br>
+          *&nbsp;Max Loons (lvl 4), Max Dragon (lvl 2)
+        <br>
+          * Walls lvl 6+ 
+        <br>
+        <br>
+        </div>
+        <h4>Town Hall 8</h4>
+        <div class="paragraphReq" style="text-align:left;">
+          *&nbsp;200 Army Camp Space
+        <br>
+          *&nbsp;King level 5
+        <br>
+          * Level 3 Spell Factory, Dark Barracks level 4
+        <br>
+          *&nbsp;Max Loons (lvl 5), Max Dragon (lvl 3), Max Golems (lvl 2)
+        <br>
+          *  Walls lvl 7+ 
+        <br>
+        <br>
+        </div>
+        <h4>Town Hall 9</h4>
+        <div class="paragraphReq" style="text-align:left;">
+          *&nbsp;220 Army Camp Space
+        <br>
+          *&nbsp;King level 15+ and Queen level 15+
+        <br>
+          * Level 4 Spell Factory
+        <br>
+          *&nbsp;Max Loons (lvl 6), Max Hogs (lvl 5), Max Golems (lvl 4), Max Valk (lvl 4)
+        <br>
+          * Walls lvl 9+ 
+        <br>
+        <br>
+        </div>
+
+        <h4>Town Hall 10</h4>
+        <div class="paragraphReq" style="text-align:left;">
+          *&nbsp;240 Army Camp Space
+        <br>
+          *&nbsp;King level 20 and Queen level 20
+        <br>
+          * Level 5 Spell Factory
+        <br>
+          *&nbsp;Max Loons (lvl 7), Hogs (lvl 6), Golems (lvl 5)
+        <br>
+          * Walls lvl 10+ 
+        <br>
+        <br>
+        </div>
+        <h4>Town Hall 11</h4>
+          <p class="paragraphReq">Currently not accepting</p>
+        <h4>Town Hall 12</h4>
+          <p class="paragraphReq">Currently not accepting</p> 
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
